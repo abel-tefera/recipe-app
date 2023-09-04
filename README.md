@@ -105,6 +105,13 @@ rspec spec
 - Twitter: [@twitter](https://twitter.com/abelteferabelay)
 - LinkedIn: [@linkedin](https://www.linkedin.com/in/abel-t-belay/)
 
+👤 **Syed Atril**
+
+- GitHub: [@githubhandle](https://github.com/Atril33)
+- Twitter: [@twitterhandle](https://twitter.com/AtrilSyed)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/syed-atril-831696248/)
+- Facebook [Facebook](https://web.facebook.com/profile.php?id=100073724910623)
+  
 # 🔭 Future Features:
 
 - Views
