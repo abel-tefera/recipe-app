@@ -1,7 +1,12 @@
-<% if user_signed_in? %> 
- <div> Welcome <%= current_user.email %> </div> 
-  <%= button_to "Sign out", destroy_user_session_path, method: :delete %> 
-<% else %>
-  <%= button_to "Sign in", new_user_session_path %> 
-<% end %>
-<h1>Recipe App</h1>
+<header>
+<nav>
+<h1 class="logo">Recipe App</h1>
+<ul>
+<%# <><%= link_to "Foods", foods_path, class: "links-top" %>
+<li>Foods</li>
+<li>Recipes</li>
+<li>Public Recipes</li>
+<li><%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "logout-btn" %></li>
+</ul>
+</nav>
+</header>
