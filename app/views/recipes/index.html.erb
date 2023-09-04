@@ -4,7 +4,11 @@
 
 <div id="recipes">
   <% @recipes.each do |recipe| %>
-    <%= render recipe %>
+    <%#=  render recipe %>
+    <div>
+      <h2><%= recipe.name %></h2>
+      <p><%= recipe.description %></p>
+    </div>
     <p>
       <%= link_to "Show this recipe", recipe %>
     </p>
