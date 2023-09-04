@@ -1,15 +1,92 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+body {
+  background: #f9f9f9;
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  width: 100%;
+  height: 400px;
+  background-image: url('Foods_background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+nav {
+  width: 100%;
+  height: 60px;
+  background: #212a30;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Black Ops One', cursive;
+  color: #f9f9f9;
+  font-size: 22px;
+  user-select: none;
+  margin: 0 50px;
+}
+
+ul {
+  margin: 0 50px;
+}
+
+li {
+  display: inline-block;
+  margin: 0 15px;
+  color: #f9f9f9;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.links-top {
+  color: #f9f9f9;
+}
+
+.logout-btn {
+  background: #fff;
+  width: 100px;
+  color: #000;
+  text-align: center;
+  padding: 8px 5px;
+  border-radius: 2px;
+  font-weight: 600;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.notice,
+.alert {
+  border-radius: 2px;
+  background: rgba(44, 235, 44, 0.459);
+  color: #fff;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  animation: hiding 5s forwards;
+}
+
+@keyframes hiding {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
