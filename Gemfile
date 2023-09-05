@@ -85,3 +85,5 @@ gem 'devise'
 gem 'cancancan'
 
 gem 'erb-formatter'
+
+gem 'tailwindcss-rails', '~> 2.0'
