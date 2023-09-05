@@ -1,10 +1,15 @@
 <header>
   <nav>
-    <h1 class="logo">Recipe App</h1>
+    <h1 class="logo">
+      <%= link_to "Recipe App", root_path %>
+      </h1>
     <ul>
-      <%# <><%= link_to "Foods", foods_path, class: "links-top" %>
-      <li><%= link_to "Foods", foods_path, class: "links-top" %></li>
-      <li><%= link_to("Recipes", recipes_path, class: "text-gray-50") %></li>
+      <li><%= link_to "Foods",
+        foods_path,
+        class: class_names("text-gray-50", { active: current_page?(foods_path) }) %></li>
+      <li><%= link_to "Recipes",
+        recipes_path,
+        class: class_names("text-gray-50", { active: current_page?(recipes_path) }) %></li>
 
       <li>Public Recipes</li>
       <li><%= button_to "Sign Out",
