@@ -1,18 +1,33 @@
+<%= render "shared/navbar" %>
+
 <p style="color: green"><%= notice %></p>
 
-<h1>Recipes</h1>
+<div class="flex flex-col items-center">
+  <h1 class="text-6xl my-4">Recipes</h1>
 
-<div id="recipes">
-  <% @recipes.each do |recipe| %>
-    <%#=  render recipe %>
-    <div>
-      <h2><%= recipe.name %></h2>
-      <p><%= recipe.description %></p>
-    </div>
-    <p>
-      <%= link_to "Show this recipe", recipe %>
-    </p>
-  <% end %>
+  <div id="recipes">
+    <% @recipes.each do |recipe| %>
+      <%#= render recipe %>
+      <div
+        class="
+          flex
+          flex-row
+          p-4
+          border-solid
+          border-2
+          border-black
+          items-center
+          my-4
+        "
+      >
+        <p class="text-4xl mx-2"><%= recipe.name %></p>
+        <p class="text-base mx-2"><%= recipe.description %></p>
+      </div>
+      <p>
+        <%#= link_to "Show this recipe", recipe %>
+      </p>
+    <% end %>
+  </div>
+
+  <%= link_to "New recipe", new_recipe_path %>
 </div>
-
-<%= link_to "New recipe", new_recipe_path %>
