@@ -2,8 +2,7 @@
 <nav>
 <h1 class="logo">Recipe App</h1>
 <ul>
-<%# <><%= link_to "Foods", foods_path, class: "links-top" %>
-<li>Foods</li>
+<li><%= link_to "Foods", foods_path, class: "links-top" %></li>
 <li>Recipes</li>
 <li>Public Recipes</li>
 <li><%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "logout-btn" %></li>
