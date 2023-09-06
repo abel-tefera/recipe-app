@@ -16,7 +16,7 @@
       <tr>
         <td><%= food.name %></td>
         <td><%= food.measurement_unit %></td>
-        <td><%= food.price %></td>
+        <td>$<%= food.price %></td>
         <td><%= button_to "Delete Food",
           food_path(food),
           method: :delete,

@@ -1,3 +1,7 @@
 <%= content_tag(:header, class: "header_bg") do %>
   <%= render "shared/navbar" %>
 <% end %>
+<div class="flex place-content-center my-10">
+  <p class="text-6xl">Welcome,
+    <%= "#{current_user.name}" %>.</p>
+</div>

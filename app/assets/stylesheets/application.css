@@ -78,12 +78,19 @@ li {
 .notice,
 .alert {
   border-radius: 2px;
-  background: rgba(44, 235, 44, 0.459);
   color: #fff;
   position: absolute;
   left: 50%;
   transform: translate(-50%, 50%);
   animation: hiding 5s forwards;
+}
+
+.notice {
+  background: rgba(44, 235, 44, 0.459);
+}
+
+.alert {
+  background: red;
 }
 
 @keyframes hiding {
@@ -141,7 +148,6 @@ li {
 
 .text-fields-container * {
   width: 280px;
-  padding: 5px 0;
   border-radius: 2px;
   border: none;
   font-size: 13px;

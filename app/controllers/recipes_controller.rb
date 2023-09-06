@@ -7,7 +7,9 @@ class RecipesController < ApplicationController
   end
 
   # GET /recipes/1 or /recipes/1.json
-  def show; end
+  def show
+    @foods = Food.joins(:recipe_foods).where(recipe_foods: { recipe_id: @recipe.id }).includes([:recipe_foods])
+  end
 
   # GET /recipes/new
   def new
@@ -37,6 +39,16 @@ class RecipesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to recipes_url, notice: 'Recipe was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def toogle
+    @recipe = Recipe.find_by_id(params[:id])
+    @recipe.public = !@recipe.public
+    if @recipe.save
+      redirect_to(request.referrer || root_path)
+    else
+      flash[:error] = 'Error updating recipe'
     end
   end
 
