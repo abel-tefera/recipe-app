@@ -7,11 +7,10 @@
 
   <div id="recipes">
     <% @recipes.each do |recipe| %>
-      <%#= render recipe %>
       <div
         class="
           flex
-          flex-row
+          flex-col
           p-4
           border-solid
           border-2
@@ -20,11 +19,22 @@
           my-4
         "
       >
-        <p class="text-4xl mx-2"><%= recipe.name %></p>
-        <p class="text-base mx-2"><%= recipe.description %></p>
+        <div class="flex flex-row">
+          <p class="text-4xl me-2">
+            <%= link_to recipe.name,
+            recipe,
+            class: "font-medium text-blue-600 dark:text-blue-500  hover:underline" %>
+          </p>
+          <p class="text-base ms-2 w-60"><%= recipe.description %></p>
+        </div>
+        <div class=" flex self-start ">
+          <%= button_to "Remove",
+          recipe_path(recipe),
+          method: :delete,
+          class: "font-medium text-blue-600 dark:text-blue-500  hover:underline" %>
+        </div>
       </div>
       <p>
-        <%#= link_to "Show this recipe", recipe %>
       </p>
     <% end %>
   </div>
