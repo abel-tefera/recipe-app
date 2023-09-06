@@ -125,7 +125,7 @@ li {
 }
 
 .small-food-container {
-  width: 250px;
+  width: 300px;
   display: flex;
   flex-direction: column;
   background: #212a30;
@@ -140,10 +140,11 @@ li {
 }
 
 .text-fields-container * {
-  width: 230px;
+  width: 280px;
   padding: 5px 0;
   border-radius: 2px;
   border: none;
+  font-size: 13px;
 }
 
 .table-container {
@@ -163,6 +164,7 @@ td {
   padding: 5px;
   text-transform: capitalize;
   text-align: center;
+  border: 2px solid #fff;
 }
 
 th {
@@ -181,4 +183,77 @@ tr:nth-child(even) {
   outline: none;
   cursor: pointer;
   text-decoration: underline;
+}
+
+.signup-container {
+  background-image: url('Foods_background.jpg');
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.small-signup-container {
+  width: 400px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #212a309f;
+  backdrop-filter: blur(2px);
+  border-radius: 5px;
+  padding: 30px;
+}
+
+.signup-heading {
+  color: #fff;
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.input-field {
+  width: 300px;
+  padding: 5px;
+  background: #fff;
+  border-radius: 3px;
+}
+
+.char-text {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.signup-btns {
+  display: flex;
+  width: 300px;
+  margin-top: 15px;
+  justify-content: space-between;
+  place-items: center;
+}
+
+.signup-btns * {
+  width: 100px;
+  background: #fff;
+  border-radius: 2px;
+  text-align: center;
+  font-size: 16px;
+  height: 35px;
+  place-items: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.login-btn {
+  width: 300px;
+  padding: 7px;
+  background: #fff;
+  margin: 10px 0;
+  border-radius: 3px;
+  cursor: pointer;
 }
