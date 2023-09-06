@@ -85,11 +85,11 @@
               >
                 <p><%= "#{food.name}" %></p>
               </th>
-              <td class="px-6 py-4">
+              <td class="px-6 py-4 text-black">
                 <%= food.recipe_foods.select { |recipe| recipe.food_id == food.id }[0].quantity %>
                 <%= food.measurement_unit %>
               </td>
-              <td class="px-6 py-4">
+              <td class="px-6 py-4 text-black">
                 $<%= food.price %>
               </td>
               <% if current_user.id == @recipe.user.id %>
@@ -97,7 +97,7 @@
                   <%= button_to "Remove",
                   recipe_recipe_food_path(@recipe.id, food.id),
                   method: :delete,
-                  class: "text-red-400 underline hover:pointer-cursor" %>
+                  class: "text-red-600 underline hover:pointer-cursor" %>
                 </td>
               <% end %>
 
