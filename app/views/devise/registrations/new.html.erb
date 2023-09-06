@@ -1,37 +1,57 @@
 <div class="signup-container">
-<div class="small-signup-container">
-<h2 class="signup-heading">Sign up</h2>
+  <div class="small-signup-container">
+    <h2 class="signup-heading">Sign up</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
 
-   <div class="field">
-   <%= f.text_field :name, autofocus: true, placeholder: "Enter Name", class: "input-field" %>
-   <div>
-<br />
-  <div class="field">
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Enter Email", class: "input-field"  %>
+      <div class="field my-4">
+        <%= f.text_field :name,
+                     autofocus: true,
+                     placeholder: "Enter Name",
+                     required: true,
+                     class: "input-field" %>
+      </div>
+
+      <div class="field my-4">
+        <%= f.email_field :email,
+                      autofocus: true,
+                      autocomplete: "email",
+                      placeholder: "Enter Email",
+                      required: true,
+                      class: "input-field" %>
+      </div>
+
+      <div class="field my-4">
+        <%= f.password_field :password,
+                         autocomplete: "new-password",
+                         placeholder: "Enter Password",
+                         required: true,
+                         minimum: 6,
+                         class: "input-field" %>
+        <br/>
+        <% if @minimum_password_length %>
+          <em class="char-text">(<%= @minimum_password_length %>
+            characters minimum)</em>
+        <% end %>
+      </div>
+      <div class="field my-4">
+        <%= f.password_field :password_confirmation,
+                         autocomplete: "new-password",
+                         placeholder: "Re-enter Password",
+                         required: true,
+                         minimum: 6,
+                         class: "input-field" %>
+      </div>
+
+      <div class="signup-btns my-4">
+        <div>
+          <%= f.submit "Sign up", class: 'cursor-pointer' %>
+        </div>
+        <div>
+          <%= render "devise/shared/links" %>
+        </div>
+      </div>
+    <% end %>
   </div>
-
-  <div class="field">
-    <% if @minimum_password_length %>
-    <em class="char-text">(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password", placeholder: "Enter Password", class: "input-field"  %>
-  </div>
-<br />
-  <div class="field">
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "ReEnter Password", class: "input-field"  %>
-  </div>
-
-  <div class="signup-btns">
   <div>
-    <%= f.submit "Sign up" %>
-    </div>
-    <div>
-    <%= render "devise/shared/links" %>
-    </div>
-  </div>
-<% end %>
-</div>
-<div>
