@@ -6,11 +6,9 @@ Rails.application.routes.draw do
   devise_for :users
   
   resources :foods, only: [:index, :new, :create, :destroy]
-  resources :recipes, only: [:index, :new, :create, :destroy, :show]
-
-  get 'recipe_foods/new'
-  get 'recipe_foods/create'
-  get 'recipe_foods/destroy'
+  resources :recipes, only: [:index, :new, :create, :destroy, :show] do
+    resources :recipe_foods, only: [:new, :create, :destroy]
+  end
 
   get '/toogle/:id', to: 'recipes#toogle'
 end
