@@ -87,3 +87,5 @@ gem 'cancancan'
 gem 'erb-formatter'
 
 gem 'tailwindcss-rails', '~> 2.0'
+
+gem 'faker'
