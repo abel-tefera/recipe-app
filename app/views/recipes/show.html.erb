@@ -27,19 +27,19 @@
         </div>
       <% end %>
     </div>
-    <% if @recipe.user === current_user %>
-      <div class="flex flex-row">
-        <%= button_to "Delete",
-        @recipe,
-        method: :delete,
-        class:
-          "mx-2 bg-black text-white py-2 px-4 rounded-sm w-full cursor-pointer border-2 hover:bg-white hover:text-black hover:border-black transition" %>
+    <div class="flex flex-row">
+      <%= link_to "Generate shopping list",
+      "/general_shopping_list",
+      class:
+        "mx-2 bg-black text-white py-2 px-4 rounded-sm w-full cursor-pointer border-2 hover:bg-white hover:text-black hover:border-black transition" %>
+      <% if @recipe.user === current_user %>
         <%= link_to "Add ingredients",
         new_recipe_recipe_food_path(@recipe),
         class:
           "mx-2 bg-black text-white py-2 px-4 rounded-sm w-full cursor-pointer border-2 hover:bg-white hover:text-black hover:border-black transition" %>
-      </div>
-    <% end %>
+      <% end %>
+
+    </div>
 
     <div class="relative overflow-x-auto w-full my-6 mx-2">
       <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">

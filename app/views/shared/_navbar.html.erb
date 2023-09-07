@@ -2,7 +2,7 @@
   <nav>
     <h1 class="logo">
       <%= link_to "Recipe App", root_path %>
-      </h1>
+    </h1>
     <ul>
       <li><%= link_to "Foods",
         foods_path,
@@ -11,9 +11,14 @@
         recipes_path,
         class: class_names("text-gray-50", { active: current_page?(recipes_path) }) %></li>
 
-      <li><%= link_to "Public Recipes", 
-      public_recipes_path,
-      class: class_names("text-gray-50", { active: current_page?(public_recipes_path) }) %></li>
+      <li><%= link_to "Public Recipes",
+        public_recipes_path,
+        class:
+          class_names("text-gray-50", { active: current_page?(public_recipes_path) }) %></li>
+      <li><%= link_to "Shopping List",
+        general_shopping_list_path,
+        class:
+          class_names("text-gray-50", { active: current_page?(general_shopping_list_path) }) %></li>
       <li><%= button_to "Sign Out",
         destroy_user_session_path,
         method: :delete,
