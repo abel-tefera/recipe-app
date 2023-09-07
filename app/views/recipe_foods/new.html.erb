@@ -6,16 +6,11 @@
       <div class="my-4 w-full flex flex-row justify-between items-center">
         <%= form.label :quantity, class: "min-w-20" %>
         <div class="flex items-start ms-2 w-full">
-          <%= form.number_field :quantity %>
+          <%= form.number_field :quantity, required: true %>
         </div>
       </div>
       <div class="my-4 w-full flex flex-row justify-between items-center">
-        <%= form.label :food_id,
-                   {},
-                   {
-                     class:
-                       "min-w-20"
-                   } %>
+        <%= form.label :food_id, {}, { class: "min-w-20" } %>
         <div class="flex items-start ms-2 w-full">
           <%= form.select :food_id,
                       options_for_select(Food.all.map { |f| [f.name, f.id] }),
