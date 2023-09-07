@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   end
 
   get '/toogle/:id', to: 'recipes#toogle'
+  get '/general_shopping_list', to: 'shopping_list#index'
 end
