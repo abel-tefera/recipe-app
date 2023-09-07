@@ -63,7 +63,7 @@
               Quantity
             </th>
             <th scope="col" class="px-6 py-3">
-              Unit Price
+              Price
             </th>
             <% if current_user.id == @recipe.user.id %>
               <th scope="col" class="px-6 py-3">Actions</th>
@@ -87,11 +87,12 @@
                 <p><%= "#{food.name}" %></p>
               </th>
               <td class="px-6 py-4 text-black">
-                <%= food.recipe_foods.select { |recipe| recipe.food_id == food.id }[0].quantity %>
+                <%= food.recipe_foods.select { |recipe| recipe.food_id == food.id }.first.quantity %>
                 <%= food.measurement_unit %>
               </td>
               <td class="px-6 py-4 text-black">
-                $<%= food.price %>
+                $<%= food.price *
+                  food.recipe_foods.select { |recipe| recipe.food_id == food.id }.first.quantity %>
               </td>
               <% if current_user.id == @recipe.user.id %>
                 <td class="px-6 py-4">
