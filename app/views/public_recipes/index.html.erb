@@ -1,0 +1,24 @@
+<%= render "shared/navbar" %>
+
+<div class="public-recipe-container">
+<% @recipe_all.each do |public_recipe| %>
+<div class="public-recipe-item">
+<div class="public-recipe-names">
+ <h2><%= public_recipe.name %></h2>
+ <br />
+ <i>By</i> <%= public_recipe.user.name %>
+ </div>
+ <div class="public-recipe-item-total">
+   Total Food Items: <%= public_recipe.recipe_foods.count %>
+   <br />
+   <br />
+   <% recipe_total_price = 0 %>
+   <% public_recipe.recipe_foods.each do |recipe_foods_item| %>
+ <% recipe_total_price += recipe_foods_item.quantity * recipe_foods_item.food.price %>
+ 
+   <% end %>
+    Total Price: $<%= recipe_total_price %>
+ </div>
+</div>
+<% end %>
+</div>
