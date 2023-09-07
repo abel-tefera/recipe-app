@@ -2,6 +2,11 @@
 
 <div class="flex flex-col items-center">
   <h1 class="font-bold text-4xl my-4">ShoppingList</h1>
+  <div class="flex flex-row justify-between w-1/2">
+    <p>Amount of food items to buy:
+      <%= @amt %></p>
+    <p>Total price: $<%= @total %></p>
+  </div>
   <div class="flex flex-col items-start w-3/4">
 
     <div class="relative overflow-x-auto w-full my-6 mx-2">
@@ -51,7 +56,8 @@
                 <%= food.measurement_unit %>
               </td>
               <td class="px-6 py-4 text-black">
-                $<%= food.price * food.recipe_foods.select { |recipe| recipe.food_id == food.id }.first.quantity %>
+                $<%= food.price *
+                  food.recipe_foods.select { |recipe| recipe.food_id == food.id }.first.quantity %>
               </td>
 
             </tr>

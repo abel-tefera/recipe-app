@@ -27,16 +27,16 @@
         </div>
       <% end %>
     </div>
-    <div class="flex flex-row">
+    <div class="flex flex-row w-1/2">
       <%= link_to "Generate shopping list",
       "/general_shopping_list",
       class:
-        "mx-2 bg-black text-white py-2 px-4 rounded-sm w-full cursor-pointer border-2 hover:bg-white hover:text-black hover:border-black transition" %>
+        "mx-2 bg-black text-white py-2 px-4 rounded-sm w-full cursor-pointer border-2 hover:bg-white hover:text-black hover:border-black transition w-fit" %>
       <% if @recipe.user === current_user %>
         <%= link_to "Add ingredients",
         new_recipe_recipe_food_path(@recipe),
         class:
-          "mx-2 bg-black text-white py-2 px-4 rounded-sm w-full cursor-pointer border-2 hover:bg-white hover:text-black hover:border-black transition" %>
+          "mx-2 bg-black text-white py-2 px-4 rounded-sm w-full cursor-pointer border-2 hover:bg-white hover:text-black hover:border-black transition w-fit" %>
       <% end %>
 
     </div>
