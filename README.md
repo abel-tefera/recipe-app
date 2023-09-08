@@ -4,7 +4,7 @@
 
   <br/>
 
-  <h1><b>Recipe App</b></h1>
+  <img src="https://github.com/abel-tefera/recipe-app/blob/dev/project%20preview.png"></img>
 
 </div>
 
