@@ -1,0 +1,44 @@
+<%= render "shared/navbar" %>
+
+<div class="new-food-container">
+  <div class="small-food-container">
+
+    <h1 class="food-heading">Create Food</h1>
+    <div class="text-fields-container">
+      <div>
+        <%= form_with model: @food do |f| %>
+          <%= f.text_field :name,
+                       placeholder: "Enter Food Name",
+                       class: "px-2 py-4 my-4",
+                       required: true %>
+
+          <div>
+            <%= f.text_field :measurement_unit,
+                         placeholder: "Enter Measurement Unit (e.g., kg)",
+                         class: "px-2 py-4 my-4",
+                         required: true %>
+          </div>
+
+          <div>
+            <%= f.number_field :price,
+                           step: "0.01",
+                           placeholder: "Enter Food Price",
+                           class: "px-2 py-4 my-4",
+                           required: true %>
+          </div>
+
+          <div>
+            <%= f.number_field :quantity,
+                           step: "1",
+                           placeholder: "Enter Food Quantity",
+                           class: "px-2 py-4 my-4",
+                           required: true %>
+          </div>
+
+          <div class="text-white">
+            <%= f.submit class: "cursor-pointer" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,38 @@
+<div class="signup-container">
+  <div class="small-signup-container">
+
+    <h2 class="signup-heading">Log in</h2>
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="field my-4">
+        <%= f.email_field :email,
+                      autofocus: true,
+                      autocomplete: "email",
+                      placeholder: "Enter Email",
+                      required: true,
+                      class: "input-field" %>
+      </div>
+      <div class="field my-4">
+        <%= f.password_field :password,
+                         autocomplete: "current-password",
+                         placeholder: "Enter Password",
+                         required: true,
+                         class: "input-field" %>
+      </div>
+
+      <% if devise_mapping.rememberable? %>
+        <div class="field my-4 items-center flex">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me, class: "ms-2 text-white" %>
+        </div>
+      <% end %>
+
+      <div class="actions my-4">
+        <%= f.submit "Log in", class: "login-btn" %>
+      </div>
+    <% end %>
+    <div class="text-white">
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>

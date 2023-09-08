@@ -1,0 +1,31 @@
+<%= render "shared/navbar" %>
+<div class="flex flex-col items-center">
+  <div class="">
+    <h1 class="text-6xl my-4 w-96">Add Ingredients for Recipe</h1>
+    <%= form_with url: "/recipes/#{params[:recipe_id]}/recipe_foods", model: @recipe_foods, method: :post do |form| %>
+      <div class="my-4 w-full flex flex-row justify-between items-center">
+        <%= form.label :quantity, class: "min-w-20" %>
+        <div class="flex items-start ms-2 w-full">
+          <%= form.number_field :quantity, required: true %>
+        </div>
+      </div>
+      <div class="my-4 w-full flex flex-row justify-between items-center">
+        <%= form.label :food_id, {}, { class: "min-w-20" } %>
+        <div class="flex items-start ms-2 w-full">
+          <%= form.select :food_id,
+                      options_for_select(Food.all.map { |f| [f.name, f.id] }),
+                      {},
+                      {
+                        class:
+                          "bg-gray-50 border border-gray-700 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      } %>
+        </div>
+      </div>
+      <div class="my-4 w-full">
+        <%= form.submit "Add Ingredients",
+                    class:
+                      "bg-black text-white py-2 px-4 rounded-sm w-full cursor-pointer border-2 hover:bg-white hover:text-black hover:border-black transition" %>
+      </div>
+    <% end %>
+  </div>
+</div>
