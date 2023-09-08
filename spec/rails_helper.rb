@@ -61,4 +61,12 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
   config.include Devise::Test::IntegrationHelpers, type: :request
+
+  RSpec.shared_context 'logged_in_user' do
+    before do
+      @user = User.create(name: 'Syed', email: 'syed@gmail.com', password: 'syedatril',
+                          password_confirmation: 'syedatril')
+      login_as(@user, scope: :user) # Adjust this based on your authentication method
+    end
+  end
 end
