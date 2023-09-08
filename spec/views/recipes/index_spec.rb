@@ -5,7 +5,7 @@ RSpec.describe 'Recipe #index page', type: :feature do
   before(:each) do
     @user = User.create(name: 'syed', email: 'test@gmail.com', password: 'testest')
     @recipe1 = Recipe.create(name: 'My unknown recipe', description: 'this is my unknwon recipe',
-                             preparation_time: '10', cooking_time: '10', user: User.first)
+                             preparation_time: '10', cooking_time: '10', user: @user)
     @recipe2 = Recipe.create(name: 'My unknown', description: 'this is my unknwon recipe', preparation_time: '10',
                              cooking_time: '10', user: User.first)
 
@@ -28,7 +28,7 @@ RSpec.describe 'Recipe #index page', type: :feature do
     end
   end
 
-  it 'I can go recipe detaile page when click on a specific recipe name' do
+  it 'I can go recipe details page when click on a specific recipe name' do
     click_on 'My unknown recipe'
     expect(page).to have_current_path(recipe_path(@recipe1))
   end

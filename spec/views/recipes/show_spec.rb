@@ -3,10 +3,10 @@ require 'capybara/rspec'
 
 RSpec.describe 'Recipe #show page', type: :feature do
   before(:each) do
-    @user = User.create(name: 'syed', email: 'test@gmail.com', password: 'testest')
+    @user = User.create(name: 'syed', email: 'test@gmail.com', password: 'testest', password_confirmation: 'testest')
     @food = Food.create(name: 'Apple', measurement_unit: 'kg', price: 100, quantity: 2, user_id: @user.id)
     @recipe = Recipe.create(name: 'My unknown recipe', description: 'this is my unknwon recipe', preparation_time: '10',
-                            cooking_time: '10', user: User.first)
+                            cooking_time: '10', user: @user)
     @recipe_food1 = RecipeFood.create(quantity: 2, recipe_id: @recipe.id, food_id: @food.id)
     @recipe_food2 = RecipeFood.create(quantity: 2, recipe_id: @recipe.id, food_id: @food.id)
 

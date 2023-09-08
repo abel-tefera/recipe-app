@@ -64,7 +64,7 @@ RSpec.configure do |config|
 
   RSpec.shared_context 'logged_in_user' do
     before do
-      @user = User.create(name: 'Syed', email: 'syed@gmail.com', password: 'syedatril', id: 1)
+      @user = User.create(name: 'Syed', email: 'syed@gmail.com', password: 'syedatril', password_confirmation: 'syedatril')
       login_as(@user, scope: :user) # Adjust this based on your authentication method
     end
   end
