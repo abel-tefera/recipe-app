@@ -1,7 +1,6 @@
 require 'rails_helper'
 require 'capybara/rspec'
 
-
 RSpec.describe 'Recipe #show page', type: :feature do
   before(:each) do
     @user = User.create(name: 'syed', email: 'test@gmail.com', password: 'testest')
@@ -34,7 +33,6 @@ RSpec.describe 'Recipe #show page', type: :feature do
   it 'I can see the recipe cooking time' do
     expect(page).to have_content(@recipe.cooking_time)
   end
-
 
   it 'I can see a Generate shopping list button' do
     expect(page).to have_content('Generate shopping list')

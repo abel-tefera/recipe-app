@@ -1,7 +1,6 @@
 require 'rails_helper'
 require 'capybara/rspec'
 
-
 RSpec.describe 'Recipe #index page', type: :feature do
   before(:each) do
     @user = User.create(name: 'syed', email: 'test@gmail.com', password: 'testest')
