@@ -3,7 +3,7 @@
 <div align="center">
 
   <br/>
-
+  <h1>Recipe App</h1>
   <img src="https://github.com/abel-tefera/recipe-app/blob/dev/project%20preview.png"></img>
 
 </div>
