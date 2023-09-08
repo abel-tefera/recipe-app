@@ -84,7 +84,7 @@ bundle install
 ```
 
 ```sh
-rails s
+./bin/dev
 ```
 
 ### Run Tests
