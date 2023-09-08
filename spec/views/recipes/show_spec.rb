@@ -2,7 +2,7 @@ require 'rails_helper'
 require 'capybara/rspec'
 
 
-RSpec.describe 'Recipe #index page', type: :feature do
+RSpec.describe 'Recipe #show page', type: :feature do
   before(:each) do
     @user = User.create(name: 'syed', email: 'test@gmail.com', password: 'testest')
     @food = Food.create(name: 'Apple', measurement_unit: 'kg', price: 100, quantity: 2, user_id: @user.id)
