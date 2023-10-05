@@ -57,7 +57,7 @@
 
 > Here's the link to the deployed project:
 
-- [Recipe App](http://145.14.158.81/)
+- [Recipe App](https://recipe-app.abeltb.xyz/)
 
 <!-- GETTING STARTED -->
 
